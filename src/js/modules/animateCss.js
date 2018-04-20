@@ -16,7 +16,10 @@ module.exports = function() {
   })(jQuery);
 
   //animate effect
-  $(".section__item").animated("zoomIn", "fadeOut");
+  // $("#aside").animated("zoomIn", "fadeOut");
+  // $("#aside").animated("bounceInDown", "bounceInDown");
+  // $(".hero").addClass("bounceInDown", 'shake');
+  // $("#aside").addClass("bounceInDown");
 
   // end Animate CSS + WayPoints javaScript Plugin
 

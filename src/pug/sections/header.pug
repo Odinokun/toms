@@ -1,4 +1,13 @@
 // begin header
-header.header(style='background-color:#167;color:#fff;text-align:center;text-transform:uppercase;')
-  h1 header
+header.header
+  // begin ticker
+  .ticker
+    .ticker__viewport
+      .ticker__list(data-ticker="list")
+        .ticker__item(data-ticker="item") Золото: BID 1327.04   ASK 1327.34
+        .ticker__item(data-ticker="item") Серебро: BID 16.59   ASK 16.62
+        .ticker__item(data-ticker="item") Платина: BID 970.0   ASK 980.0
+        .ticker__item(data-ticker="item") Палладий: BID 991.6   ASK 994.6
+        .ticker__item(data-ticker="item") 16:04 мск
+    // end ticker
 // end header

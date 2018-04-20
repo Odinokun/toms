@@ -1,0 +1,33 @@
+.header {
+  padding: 3px 0;
+  background-color: #00755a;
+}
+// BEGIN бегущая строка
+.ticker {
+  //@include max(560) {
+  //  display: none;
+  //}
+}
+.ticker__viewport {
+  position: relative;
+  overflow: hidden;
+  width: 96.5%;
+  max-width: 1110px;
+  margin: 0 auto;
+
+  //@include max(850) {
+  //  width: 94%;
+  //}
+}
+.ticker__list {
+  display: flex;
+}
+.ticker__item {
+  font-size: 13px;
+  margin: 0;
+  padding-right: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #fff;
+}
+// END бегущая строка

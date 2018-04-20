@@ -1,0 +1,61 @@
+#parallax {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  //height: calc(100vh - 25px);
+  background: url('../img/bg.jpg')  0 0 no-repeat/cover;
+  //position: absolute;
+  position: fixed;
+  height: 100%;
+}
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.layer-01,
+.layer-02,
+.layer-03 {
+  height: calc(100% + 25px);
+  position: absolute;
+  width: 110%;
+}
+.layer-01{
+  background: url('../img/bg-01.png') 0 0 no-repeat/cover;
+}
+.layer-02{
+  background: url('../img/bg-02.png') 0 0 no-repeat/cover;
+}
+.layer-03{
+  background: url('../img/bg-lines.png') 0 0 no-repeat/cover;
+}
+.layer-01{
+  animation: rotate 10s .5s infinite linear reverse;
+}
+
+.layer-02{
+          animation: rotate 15s .1s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, .6%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, .6%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, .6%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, .6%, 0) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, .6%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, .6%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, .6%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, .6%, 0) rotateZ(-360deg);
+  }
+}

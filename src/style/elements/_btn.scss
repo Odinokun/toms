@@ -1,0 +1,73 @@
+.btn {
+  font-family: $font-os-b;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+  display: block;
+  float: left;
+  margin: 30px 0 0 0;
+  padding: 10px 40px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #007458;
+  border: none;
+  background: none;
+
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  &:hover {
+    text-decoration: none;
+    color: #007458;
+  }
+}
+.button:focus {
+  outline: none;
+}
+.button > span {
+  vertical-align: middle;
+}
+
+
+/* Individual button styles */
+/* Pipaluk */
+.button--pipaluk::before,
+.button--pipaluk::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  transition: transform .3s, background-color .3s;
+  transition-timing-function: cubic-bezier(.25, 0, .3, 1);
+  border-radius: inherit;
+}
+.button--pipaluk::before {
+  border: 2px solid #ffd400;
+}
+.button--pipaluk.button--inverted::before {
+  border-color: #fff;
+}
+.button--pipaluk::after {
+  background: #ffd400;
+}
+.button--pipaluk.button--inverted::after {
+  background: #fff;
+}
+.button--pipaluk:hover::before {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+.button--pipaluk::before,
+.button--pipaluk:hover::after {
+  -webkit-transform: scale3d(.7, .7, 1);
+          transform: scale3d(.7, .7, 1);
+}
+.button--pipaluk:hover::after {
+  background-color: #ffd400;
+}
+.button--pipaluk.button--inverted:hover::after {
+  background-color: #fff;
+}
+

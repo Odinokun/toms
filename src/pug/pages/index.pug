@@ -1,13 +1,46 @@
 extends ../_template
 
+mixin hero-footer__item(top, middle, bottom)
+  .hero-footer__item
+    span.hero-footer__top #{top}
+    span.hero-footer__middle.spincrement #{middle}
+    span.hero-footer__bottom #{bottom}
+
 block variables
-  - var title = 'Odinokun`s start template'
+  - var title = 'Томс'
 
 block content
   include ../sections/header
   
   //begin content
-  section.main
-  //end content
+  section.main.index-page
+    #parallax
+      .layer(data-depth="0.5")
+        .layer-01
+      .layer(data-depth="0.4")
+        .layer-02
+      .layer(data-depth="0.3")
+        .layer-03
 
-  include ../sections/footer
+    .container.main-container
+      include ../sections/aside
+      section#barba-wrapper.barba-wrapper
+        .barba-container.index#index
+          .hero.bounceInUp.animated
+            .hero-text
+              h2.hero__title комплексное ОСВОЕНИЕ НЕДР С 1993 ГОДА
+              h3.hero__subtitle мы знаем, как ископаемые становятся полезными
+              p
+                |Компании группы ТОМС оказывают полный
+                a(href="#") комплекс услуг
+                =" "
+                |по освоению месторождения от инвестиционного замысла до выхода предприятия на проектную мощность.
+              a(href="#").btn.button--pipaluk узнать больше
+              //button.hero__btn узнать больше
+            .hero-footer
+              +hero-footer__item('более', '20', 'лет на рынке')
+              +hero-footer__item('реализовано', '28', 'ерсм проектов')
+              +hero-footer__item('ежегодно', '120', 'НИР и тех. регламентов')
+
+
+  //end content
