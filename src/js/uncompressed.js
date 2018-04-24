@@ -28,6 +28,10 @@ function pageWidget(pages) {
 // END Меню для навигации при разработке
 
 
+$('.burger input').on('click', function () {
+  $('.aside-wrap').toggleClass('active');
+});
+
 //====== Begin Programmer code ======
 
 // jquery.parallax.js
