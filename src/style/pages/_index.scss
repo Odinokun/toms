@@ -8,6 +8,10 @@
     position: relative;
     display: flex;
     align-items: center;
+
+    @include max(700) {
+      padding-top: 70px;
+    }
   }
 }
 .hero {
