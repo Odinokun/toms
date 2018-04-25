@@ -37,19 +37,7 @@ $('.aside-menu a').on('click', function () {
   $('.aside-wrap').toggleClass('active');
 });
 
-// ===== Scroll to Top ====
-$(window).on('scroll', function() {
-  if ($(this).scrollTop() <= 50) {
-    $('#scroll2top').fadeOut();
-  } else {
-    $('#scroll2top').fadeIn();
-  }
-});
-$('#scroll2top').click(function() {
-  $('body,html').animate({
-    scrollTop : 0
-  }, 500);
-});
+
 
 
 //====== Begin Programmer code ======

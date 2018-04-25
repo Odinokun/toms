@@ -44,6 +44,64 @@ module.exports = function() {
     // console.log(currPage);
 
     if (currPage === 'about') {
+      $('#about-sec__slider').slick({
+        autoplay: true,
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 801,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 501,
+            settings: {
+              arrows: false,
+              slidesToShow: 2
+            }
+          }
+        ]
+      });
+      // end Slick slider
+
+    } else if (currPage === 'service') {
+      // begin scroll 2 ancore desktop menu
+      $(function() {
+        $('a.service-tab__item[href*=\\#]').on("click", function(e){
+          e.preventDefault();
+          var anchor = $(this);
+          $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 80 + 'px'
+          }, 1000);
+        });
+        return false;
+      });
+      // end scroll 2 ancore desktop menu
+
+      // ===== Scroll to Top ====
+      $(window).on('scroll', function() {
+        if ($(this).scrollTop() <= 50) {
+          $('#scroll2top').fadeOut();
+        } else {
+          $('#scroll2top').fadeIn();
+        }
+      });
+      $('#scroll2top').click(function() {
+        $('body,html').animate({
+          scrollTop : 0
+        }, 500);
+      });
+      // ===== End Scroll to Top ====
 
     } else if (currPage === 'contacts') {
       // // initMap() - функция инициализации карты
