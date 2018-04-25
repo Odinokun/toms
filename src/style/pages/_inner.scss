@@ -1,4 +1,4 @@
-.inner {
+.barba-container {
   padding-left: 250px;
 
   @include max(700) {
@@ -44,6 +44,16 @@
     content: '';
     pointer-events: none;
     border: 2px solid #ffd400;
+    @include max(1000) {
+      right: -10px;
+
+    }
+    @include max(700) {
+      left: -10px;
+    }
+    @include max(425) {
+      display: none;
+    }
   }
 }
 .page-inn {

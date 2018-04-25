@@ -1,11 +1,5 @@
 extends ../_template
 
-mixin hero-footer__item(top, middle, bottom)
-  .hero-footer__item
-    span.hero-footer__top #{top}
-    span.hero-footer__middle.spincrement #{middle}
-    span.hero-footer__bottom #{bottom}
-
 block variables
   - var title = 'Томс'
   - var pageHeaderTitle = 'О компании'
@@ -19,7 +13,7 @@ block content
     //include ../sections/parallax
     include ../sections/video
 
-    .container.main-container
+    .container
       include ../sections/aside
       section#barba-wrapper.barba-wrapper
         .barba-container.inner
