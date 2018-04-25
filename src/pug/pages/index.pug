@@ -14,19 +14,14 @@ block content
   
   //begin content
   section.main.index-page
-    #parallax
-      .layer(data-depth="0.5")
-        .layer-01
-      .layer(data-depth="0.4")
-        .layer-02
-      .layer(data-depth="0.3")
-        .layer-03
 
-    .container.main-container
+    include ../sections/video
+
+    .container
       include ../sections/aside
       section#barba-wrapper.barba-wrapper
         .barba-container.index#index
-          .hero.bounceInUp.animated
+          .hero.fadeInUp.animated
             .hero-text
               h2.hero__title комплексное ОСВОЕНИЕ НЕДР С 1993 ГОДА
               h3.hero__subtitle мы знаем, как ископаемые становятся полезными

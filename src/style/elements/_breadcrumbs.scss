@@ -15,8 +15,9 @@
   list-style: none;
   &::after {
     font-size: 12px;
-    margin: 0 3px 0 4px;
+    margin: 0 7px 0 4px;
     content: '/';
+    color: #fff;
   }
   &:last-child {
     &::after {
@@ -27,7 +28,8 @@
 .breadcrumbs__link {
   font-size: 12px;
   white-space: nowrap;
-  color: #403549;
+  text-decoration: underline;
+  color: #fff;
   &:hover {
     text-decoration: none;
   }

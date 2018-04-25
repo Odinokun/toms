@@ -1,17 +1,24 @@
 .main {
   position: relative;
+  padding-top: 25px;
 }
 
 .index-page {
-  display: flex;
+  //display: flex;
   .main-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    @include max(700) {
-      padding-top: 70px;
-    }
+    //position: relative;
+    //display: flex;
+    //align-items: center;
+  }
+}
+.index {
+  min-height: calc(100vh - 30px);
+  display: flex;
+  align-items: center;
+  padding-left: 230px;
+  @include max(700) {
+    padding-top: 60px;
+    padding-left: 0;
   }
 }
 .hero {
@@ -20,12 +27,14 @@
   flex-wrap: wrap;
   padding: 20px 0 20px 70px;
 
-  @include max(1000) {
+@include max(1000) {
     padding-left: 40px;
   }
-  @include max(425) {
-    padding-left: 60px;
+
+@include max(700) {
+    padding-left: 0;
   }
+
   p {
     font-size: 16px;
     color: #fff;
@@ -52,7 +61,7 @@
   text-transform: uppercase;
   color: #fff;
 
-  @include max(425) {
+@include max(425) {
     font-size: 30px;
   }
 }
@@ -62,7 +71,7 @@
   text-transform: uppercase;
   color: #fff;
 
-  @include max(425) {
+@include max(425) {
     font-size: 20px;
   }
 }
@@ -75,7 +84,7 @@
   max-width: 680px;
   padding: 80px 0 30px 0;
 
-  @include max(500) {
+@include max(500) {
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -88,10 +97,11 @@
   flex-direction: column;
   text-align: center;
 
-  @include max(500) {
+@include max(500) {
     width: 35%;
     margin-bottom: 20px;
   }
+
   &:last-child {
     &::before {
       display: none;
@@ -113,7 +123,7 @@
     content: '';
     background-color: #fff;
 
-    @include max(1000) {
+@include max(1000) {
       display: none;
     }
   }

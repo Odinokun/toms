@@ -31,6 +31,11 @@ function pageWidget(pages) {
 $('.burger input').on('click', function () {
   $('.aside-wrap').toggleClass('active');
 });
+$('.aside-menu a').on('click', function () {
+  $('.aside-wrap').toggleClass('active');
+});
+
+Barba.Pjax.start();
 
 //====== Begin Programmer code ======
 

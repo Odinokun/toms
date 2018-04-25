@@ -1,20 +1,22 @@
 .aside-wrap {
-  position: relative;
+  //transform: translateY(-25px);
+  position: fixed;
+  //position: relative;
   z-index: 10;
+  top: 0;
   height: 100%;
   transition: transform .5s;
-  transform: translateY(-25px);
 
   @include max(700) {
-    position: absolute;
-    top: 0;
+    //position: absolute;
+    top: 23px;
     right: 0;
     left: 0;
-    transition: .5s;
+    overflow: hidden;
     width: 100%;
     height: 60px;
-    overflow: hidden;
-    &.active{
+    transition: .5s;
+    &.active {
       height: 100vh;
     }
     //  transform: translate(-240px, 0);
@@ -53,14 +55,28 @@
   width: 240px;
   min-height: 500px;
   padding: 40px 0;
-  background: url('../img/decor-aside.jpg') 0 100% no-repeat, url('../img/bg-aside.jpg') 0 100% no-repeat/contain;
   background-color: #fff;
+  background-image: url('../img/bg-aside.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: contain;
 
   @include max(700) {
     width: 100%;
     height: 100vh;
     padding-top: 70px;
     text-align: center;
+  }
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 89px;
+    height: 93px;
+    content: '';
+    background-image: url('../img/decor-aside.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 100%;
   }
 }
 
@@ -78,6 +94,7 @@
     padding: 0;
     background-color: #347;
   }
+
   img {
     max-width: 100%;
   }
@@ -85,7 +102,6 @@
 .aside-menu__list {
   margin: 0;
   padding: 0;
-
 }
 .aside-menu__item {
   position: relative;
@@ -173,6 +189,7 @@
 }
 
 .aside-lang {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -182,11 +199,32 @@
   border: 1px solid rgba(0, 118, 91, .3);
 }
 .aside-lang__item {
+  z-index: 2;
   flex: none;
   width: 22px;
   height: 16px;
   cursor: pointer;
   background-image: url('../img/flags.jpg');
+  &:hover {
+    & + .aside-lang__item--decor {
+      opacity: 1;
+    }
+  }
+}
+.aside-lang__item--ru + .aside-lang__item--decor {
+  left: -20px;
+}
+.aside-lang__item--eng + .aside-lang__item--decor {
+  right: -20px;
+}
+.aside-lang__item--decor {
+  position: absolute;
+  top: 21px;
+  width: 15px;
+  height: 25px;
+  transition: opacity .5s;
+  opacity: 0;
+  border: 1px solid rgba(0, 118, 91, .3);
 }
 .aside-lang__item--ru {
   margin-left: -11px;

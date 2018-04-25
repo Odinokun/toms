@@ -5,7 +5,10 @@ module.exports = [
   './node_modules/svg4everybody/dist/svg4everybody.min.js',
 
   // include counter
-  './src/vendors/counter/js/jquery.spincrement.js'
+  './src/vendors/counter/js/jquery.spincrement.js',
+
+  // include Barba.js
+  './node_modules/barba.js/dist/barba.min.js'
 
   // include Slick slider
   // './node_modules/slick-carousel/slick/slick.min.js',

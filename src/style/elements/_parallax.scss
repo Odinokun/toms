@@ -4,7 +4,10 @@
   overflow: hidden;
   width: 100%;
   //height: calc(100vh - 25px);
-  background: url('../img/bg.jpg')  0 0 no-repeat/cover;
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size:cover;
   //position: absolute;
   position: fixed;
   height: 100%;
@@ -22,13 +25,22 @@
   width: 110%;
 }
 .layer-01{
-  background: url('../img/bg-01.png') 0 0 no-repeat/cover;
+  background-image: url('../img/bg-01.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size:cover;
 }
 .layer-02{
-  background: url('../img/bg-02.png') 0 0 no-repeat/cover;
+  background-image: url('../img/bg-02.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size:cover;
 }
 .layer-03{
-  background: url('../img/bg-lines.png') 0 0 no-repeat/cover;
+  background-image: url('../img/bg-lines.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size:cover;
 }
 .layer-01{
   animation: rotate 10s .5s infinite linear reverse;

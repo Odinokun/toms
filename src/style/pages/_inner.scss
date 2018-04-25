@@ -1,0 +1,56 @@
+.inner {
+  padding-left: 250px;
+
+  @include max(700) {
+    padding-top: 60px;
+    padding-left: 0;
+  }
+}
+.page-header {
+  padding-left: 20px;
+
+  @include max(700) {
+    padding-left: 0;
+  }
+}
+
+
+.page-header__title {
+  font-family: $font-pt-b;
+  font-size: 40px;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  &::before {
+    position: absolute;
+    top: 13px;
+    right: calc(100% + 7px);
+    width: 100px;
+    height: 29px;
+    content: '';
+    background-image: url('../img/page-header-title.png');
+    background-repeat: repeat-x;
+    background-position: 100% 50%;
+  }
+}
+.page {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 50px;
+    right: -25px;
+    bottom: -40px;
+    left: -160px;
+    content: '';
+    pointer-events: none;
+    border: 2px solid #ffd400;
+  }
+}
+.page-inn {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 80px;
+  padding: 20px 35px;
+
+  background-color: #fff;
+}

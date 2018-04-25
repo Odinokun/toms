@@ -1,8 +1,8 @@
 .aside-wrap#aside-wrap
   .aside-open
     span Меню
-  .aside#aside.bounceInDown.animated
-    a(href="#").aside-logo
+  .aside#aside.fadeInDown.animated
+    a(href="index.html").aside-logo
       img(src="assets/img/logo.jpg" alt="logo")
 
     include ../elements/burger
@@ -10,7 +10,7 @@
     nav.aside-menu
       ul.aside-menu__list
         li.aside-menu__item
-          a(href="#").aside-menu__link о компании
+          a(href="inner.html").aside-menu__link о компании
         li.aside-menu__item.aside-menu__item--parent
           a(href="#").aside-menu__link услуги
           ul.aside-menu__sublist
@@ -40,8 +40,10 @@
           a(href="#").aside-menu__link контакты
     .aside-lang
       .aside-lang__item.aside-lang__item--ru.active(data-lang='rus')
+      .aside-lang__item--decor
       .aside-lang__text#aside-lang__text rus
       .aside-lang__item.aside-lang__item--eng(data-lang='eng')
+      .aside-lang__item--decor
 
 
 

@@ -1,6 +1,11 @@
 .header {
   padding: 3px 0;
   background-color: #00755a;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 // BEGIN бегущая строка
 .ticker {

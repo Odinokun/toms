@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Odinokun/quick-start-tpl#readme",
   "devDependencies": {
+    "barba.js": "^1.0.0",
     "browser-sync": "^2.23.6",
     "browserify": "^15.2.0",
     "del": "^3.0.0",
