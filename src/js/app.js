@@ -7,7 +7,7 @@ $(function() {
   require('./modules/scroll2ancor')();
 
   // begin Slick slider
-  // require('./modules/slick')();
+  require('./modules/slick')();
 
   // begin Popup
   // require('./modules/popup')();
@@ -17,6 +17,9 @@ $(function() {
   require('./modules/animateCss')();
 
   // begin Fancybox3
-  // require('./modules/fancybox')();
+  require('./modules/fancybox')();
+
+  // begin Barba.js
+  require('./modules/barba')();
 
 });

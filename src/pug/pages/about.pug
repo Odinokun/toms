@@ -1,0 +1,128 @@
+extends ../_template
+
+mixin about-advantages__item(icon, text)
+  .about-advantages__item.fadeIn.animated
+    .about-advantages__icon
+      svg
+        use(xlink:href='assets/img/sprite.svg#advan-' + icon + '')
+    .about-advantages__text
+      span #{text}
+
+block variables
+  - var title = 'О компании | Томс'
+  - var pageHeaderTitle = 'О компании'
+
+block content
+  include ../sections/header
+
+  //begin content
+  section.main.about-page
+
+    include ../sections/video
+
+    .container
+      include ../sections/aside
+      section#barba-wrapper.barba-wrapper
+        .barba-container.about#about
+          //begin page-header
+          header.page-header
+            include ../elements/breadcrumbs
+            h2.page-header__title #{pageHeaderTitle}
+          //end   page-header
+
+          //begin page
+          section.page
+            .page-inn
+              h2.page__title ооо "томс"
+              p Товарищи! консультация с широким активом требуют от нас анализа соответствующий условий активизации. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+              .about__btn-row
+                a(href="#").btn.button--pipaluk.about__btn скачать презентацию
+                a(href="#").btn.button--pipaluk.about__btn наши проекты
+                a(href="#").btn.button--pipaluk.about__btn наша гордость
+
+              //begin about-license
+              section.about-license
+                header.about-sec__header
+                  h3.about-sec__title Лицензии и СРО
+                .about-license__list
+                  a.no-barba(data-fancybox="gallery" href="assets/img/license-01.jpg")
+                    img(src="assets/img/license-thumb.jpg" alt="license")
+                  a.no-barba(data-fancybox="gallery" href="assets/img/license-01.jpg")
+                    img(src="assets/img/license-thumb.jpg" alt="license")
+                  a.no-barba(data-fancybox="gallery" href="assets/img/license-01.jpg")
+                    img(src="assets/img/license-thumb.jpg" alt="license")
+              //end   about-license
+
+              //begin about-advantages
+              section.about-advantages
+                header.about-sec__header
+                  h3.about-sec__title Преимущества
+                .about-advantages__list
+                  +about-advantages__item('01', 'инновационные методы проектирования')
+                  +about-advantages__item('02', 'инновационные методы проектирования')
+                  +about-advantages__item('03', 'инновационные методы проектирования')
+                  +about-advantages__item('04', 'инновационные методы проектирования')
+                  +about-advantages__item('05', 'инновационные методы проектирования')
+                  +about-advantages__item('06', 'инновационные методы проектирования')
+                  +about-advantages__item('07', 'инновационные методы проектирования')
+                  +about-advantages__item('08', 'инновационные методы проектирования')
+              //end   about-advantages
+
+              //begin about-clients
+              section.about-clients
+                header.about-sec__header
+                  h3.about-sec__title Наши клиенты
+                
+                .about-sec__slider#about-sec__slider
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-01.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-02.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-03.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-04.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-05.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-01.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-02.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-03.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-04.jpg" alt="client")
+                  .about-sec__slider-item
+                    img(src="assets/img/clients-05.jpg" alt="client")
+              //end   about-clients
+
+              //begin about-news
+              section.about-news
+                header.about-sec__header
+                  h3.about-sec__title Новости
+                .about-sec__news-list
+                  a(href="#").about-sec__news-item
+                    .about-sec__news-pic
+                      img(src="assets/img/news-01.jpg" alt="news")
+                    .about-sec__news-date
+                      span 21.11.2016
+                    h4.about-sec__news-text 21 ноября 2016 года подписан EPC-контракт с АО «СиГМА»
+
+                  a(href="#").about-sec__news-item
+                    .about-sec__news-pic
+                      img(src="assets/img/news-02.jpg" alt="news")
+                    .about-sec__news-date
+                      span 21.11.2016
+                    h4.about-sec__news-text 21 ноября 2016 года подписан EPC-контракт с АО «СиГМА»
+
+                  a(href="#").about-sec__news-item
+                    .about-sec__news-pic
+                      img(src="assets/img/news-03.jpg" alt="news")
+                    .about-sec__news-date
+                      span 21.11.2016
+                    h4.about-sec__news-text 21 ноября 2016 года подписан EPC-контракт с АО «СиГМА»
+              //end   about-news
+          //end   page
+
+
+  //end content
