@@ -1,0 +1,67 @@
+extends ../_template
+
+block variables
+  - var title = 'Контакты | Томс'
+  - var pageHeaderTitle = 'Контакты'
+
+block content
+  include ../sections/header
+
+  //begin content
+  section.main.contacts-page
+
+    //.contacts-map#contacts-map
+    //include ../sections/video
+
+    .container
+      include ../sections/aside
+      section#barba-wrapper.barba-wrapper
+        .barba-container.contacts#contacts
+          .contacts-map#contacts-map
+          //begin page-header
+          header.page-header
+            include ../elements/breadcrumbs
+            h2.page-header__title #{pageHeaderTitle}
+          //end   page-header
+
+          //begin page
+          section.page.page--contacts
+            .page-inn
+              .contacts__title
+                h2.contacts__title--city Санкт-Петербург
+
+              .contacts__row
+                .contacts__icon
+                  svg
+                    use(xlink:href="assets/img/sprite.svg#info")
+                .contacts__text.contacts__text--info
+                  a(href="#" target="_blank" rel="nofollow noopener noreferrer")
+                    span ООО «ГК ТОМС»
+                    br
+                    | 199178, Россия, Санкт-Петербург,
+                    br
+                    | В.О., 3-я линия, 62, лит. А,
+                    br
+                    | БЦ «Jensen House»
+              .contacts__row
+                .contacts__icon
+                  svg
+                    use(xlink:href="assets/img/sprite.svg#phone")
+                .contacts__text
+                  a(href="tel:+78126802255") Тел: +7 (812) 680 22 55
+                  br
+                  a(href="tel:+78126802200") Факс: +7 (812) 680 22 00
+              .contacts__row
+                .contacts__icon
+                  svg
+                    use(xlink:href="assets/img/sprite.svg#mail")
+                .contacts__text
+                  a(href="mailto:info@tomsgroup.ru") info@tomsgroup.ru
+
+
+
+  //end service-body
+          //end   page
+
+
+  //end content

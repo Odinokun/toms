@@ -41,7 +41,7 @@ module.exports = function() {
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
     var currPage = container.id;
-    // console.log(currPage);
+    console.log(currPage);
 
     if (currPage === 'about') {
       $('#about-sec__slider').slick({
@@ -74,7 +74,26 @@ module.exports = function() {
       });
       // end Slick slider
 
+    } else if (currPage === 'contacts') {
+
+      // initMap() - функция инициализации карты
+      function initMap() {
+        // Координаты центра на карте. Широта: 56.2928515, Долгота: 43.7866641
+        var centerLatLng = new google.maps.LatLng(59.949137, 30.278076);
+        // Обязательные опции с которыми будет проинициализированна карта
+        var mapOptions = {
+          center: centerLatLng, // Координаты центра мы берем из переменной centerLatLng
+          zoom: 16,               // Зум по умолчанию. Возможные значения от 0 до 21
+          styles: [{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#ff0000"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2f8c83"},{"visibility":"on"}]}]
+        };
+        // Создаем карту внутри элемента #map
+        var map = new google.maps.Map(document.getElementById("contacts-map"), mapOptions);
+      }
+      // запускаем initMap()
+      initMap();
+
     } else if (currPage === 'service') {
+      console.log('service');
       // begin scroll 2 ancore desktop menu
       $(function() {
         $('a.service-tab__item[href*=\\#]').on("click", function(e){
@@ -103,23 +122,6 @@ module.exports = function() {
       });
       // ===== End Scroll to Top ====
 
-    } else if (currPage === 'contacts') {
-      // // initMap() - функция инициализации карты
-      // function initMap() {
-      //   // Координаты центра на карте. Широта: 56.2928515, Долгота: 43.7866641
-      //   var centerLatLng = new google.maps.LatLng(20.000000, 0.000000);
-      //   // Обязательные опции с которыми будет проинициализированна карта
-      //   var mapOptions = {
-      //     center: centerLatLng, // Координаты центра мы берем из переменной centerLatLng
-      //     zoom: 3,               // Зум по умолчанию. Возможные значения от 0 до 21
-      //     styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-      //   };
-      //   // Создаем карту внутри элемента #map
-      //   var map = new google.maps.Map(document.getElementById("contacts-map"), mapOptions);
-      //
-      // }
-      // // запускаем initMap()
-      // initMap();
     }
   });
   // end Barba
