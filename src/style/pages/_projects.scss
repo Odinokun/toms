@@ -1,0 +1,89 @@
+.page-inn--projects {
+  padding-top: 400px;
+  padding-bottom: 80px;
+}
+.projects-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+}
+.projects__title {
+  font-family: $font-os-b;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #00755a;
+  @include max(1000) {
+    font-size: 20px;
+  }
+}
+.projects__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.projects__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33.33%;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @include max(1000) {
+    width: 50%;
+  }
+  @include max(500) {
+    width: 100%;
+  }
+  &:hover {
+    text-decoration: none;
+    .projects__img {
+      img {
+        transform: scale(1.05);
+      }
+      &::before {
+        top: 5px;
+        bottom: 5px;
+      }
+    }
+  }
+}
+.projects__img {
+  position: relative;
+  width: 90%;
+  max-width: 208px;
+  margin-bottom: 10px;
+  &::before {
+    position: absolute;
+    top: 20px;
+    right: -8px;
+    bottom: 20px;
+    left: -8px;
+    width: auto;
+    margin: auto;
+    content: '';
+    transition: .3s;
+    border: 3px solid #ffd400;
+  }
+  img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    transition: transform .5s;
+  }
+}
+.projects__img--inn {
+  overflow: hidden;
+}
+.projects__text {
+  span {
+    font-family: $font-os-b;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #00755a;
+  }
+}

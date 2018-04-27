@@ -1,0 +1,60 @@
+extends ../_template
+
+block variables
+  - var title = 'Проекты | Томс'
+  - var pageHeaderTitle = 'Проекты'
+
+block content
+  include ../sections/preloader
+  include ../sections/header
+
+  //begin content
+  section.main.projects-page
+
+    include ../sections/parallax
+
+    .container
+      include ../sections/aside
+      section#barba-wrapper.barba-wrapper
+        .barba-container.projects#projects
+          //begin page-header
+          header.page-header
+            include ../elements/breadcrumbs
+            h2.page-header__title #{pageHeaderTitle}
+          //end   page-header
+
+          //begin page
+          section.page
+            .page-inn.page-inn--projects
+              .projects-map#projects-map
+
+              p Товарищи! консультация с широким активом требуют от нас анализа соответствующий условий активизации. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+              p Равным образом укрепление и развитие структуры способствует подготовки и реализации систем массового участия.
+
+              h2.projects__title Проекты, реализованные группой Томс
+              .projects__row
+                a(href="#").projects__item
+                  .projects__img
+                    .projects__img--inn
+                      img(src="assets/img/project-01.jpg" alt="project")
+                  .projects__text
+                    span Забайкальский край
+
+                a(href="#").projects__item
+                  .projects__img
+                    .projects__img--inn
+                      img(src="assets/img/project-02.jpg" alt="project")
+                  .projects__text
+                    span Иркутская область
+
+                a(href="#").projects__item
+                  .projects__img
+                    .projects__img--inn
+                      img(src="assets/img/project-03.jpg" alt="project")
+                  .projects__text
+                    span Камчатский край
+          //end   page
+  //end content
+
+  include ../sections/scripts
+  script(src='assets/js/projects-map.js')

@@ -11,7 +11,6 @@ block content
   //begin content
   section.main.contacts-page
 
-    //.contacts-map#contacts-map
     //include ../sections/video
 
     .container
@@ -58,11 +57,8 @@ block content
                     use(xlink:href="assets/img/sprite.svg#mail")
                 .contacts__text
                   a(href="mailto:info@tomsgroup.ru") info@tomsgroup.ru
-
-
-
-  //end service-body
           //end   page
-
-
   //end content
+
+  include ../sections/scripts
+  script(src='assets/js/contacts-map.js')

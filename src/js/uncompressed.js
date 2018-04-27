@@ -1,131 +1,217 @@
-// BEGIN Меню для навигации при разработке
-//**************
-// should be commented before production
-//**************
-
-$(document).ready(function ($) {
-  pageWidget([
-    'index',
-    'inner',
-    'service',
-    'about',
-    'contacts'
-    ]);
-});
-
-function pageWidget(pages) {
-  var widgetWrap = $('<div class="widget_wrap"><ul class="widget_list"></ul></div>');
-  widgetWrap.prependTo("body");
-  for (var i = 0; i < pages.length; i++) {
-    $('<li class="widget_item"><a class="widget_link" href="'
-      + pages[i]
-      + '.html'
-      + '">'
-      + pages[i]
-      + '</a></li>').appendTo('.widget_list');
-  }
-  var widgetStilization = $('<style>body {position:relative} .widget_wrap{position:fixed;top:0;left:0;z-index:19999;padding:10px 20px;background:#222;border-bottom-right-radius:10px;-webkit-transition:all .3s ease;transition:all .3s ease;-webkit-transform:translate(-100%,0);-ms-transform:translate(-100%,0);transform:translate(-100%,0)}.widget_wrap:after{content:" ";position:absolute;top:0;left:100%;width:24px;height:24px;background:#222 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAABGdBTUEAALGPC/xhBQAAAAxQTFRF////////AAAA////BQBkwgAAAAN0Uk5TxMMAjAd+zwAAACNJREFUCNdjqP///y/DfyBg+LVq1Xoo8W8/CkFYAmwA0Kg/AFcANT5fe7l4AAAAAElFTkSuQmCC) no-repeat 50% 50%;cursor:pointer}.widget_wrap:hover{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}.widget_item{padding:0 0 10px}.widget_link{color:#fff;text-decoration:none;font-size:15px;}.widget_link:hover{text-decoration:underline} </style>');
-  widgetStilization.prependTo(".widget_wrap");
-}
-
-// END Меню для навигации при разработке
-
-
-$(window).on('load', function () {
-  var preloader = $('#preloader-overlay');
-  preloader.delay(1000).fadeOut('slow');
-});
-
-
-
-$('.burger input').on('click', function () {
-  $('.aside-wrap').toggleClass('active');
-});
-$('.aside-menu a').on('click', function () {
-  $('.aside-wrap').toggleClass('active');
-});
-
-
-
-
-//====== Begin Programmer code ======
-
-
-// begin TICKER
-var $ticker = $('[data-ticker="list"]'),
-  tickerItem = '[data-ticker="item"]'
-itemCount = $(tickerItem).length,
-  viewportWidth = 0;
-function setupViewport(){
-  $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
-  for (i = 0; i < itemCount; i ++){
-    var itemWidth = $(tickerItem).eq(i).outerWidth();
-    viewportWidth = viewportWidth + itemWidth;
-  }
-  $ticker.css('width', viewportWidth);
-}
-
-function animateTicker(){
-  $ticker.animate({
-    marginLeft: -viewportWidth
-  }, 100000, "linear", function() {
-    $ticker.css('margin-left', '0');
-    animateTicker();
-  });
-}
-
-function initializeTicker(){
-  setupViewport();
-  animateTicker();
-
-  $ticker.on('mouseenter', function(){
-    $(this).stop(true);
-  }).on('mouseout', function(){
-    animateTicker();
-  });
-}
-
-initializeTicker();
-// end TICKER
-
-
-
+//====== Begin language switcher ======
 $('.aside-lang__item').on('click', function () {
   var lang = $(this).data('lang');
   $('.aside-lang__item').removeClass('active');
   $(this).addClass('active');
   $('#aside-lang__text').text(lang);
 });
+//====== End language switcher ======
 
 
 
-// counter
-$(".spincrement").spincrement({
-  duration: 5000
-});
+//====== Begin Barba ======
+  Barba.Pjax.start();
+  //=============
+  //begin плавные переходы по страницам
+  //=============
+  var FadeTransition = Barba.BaseTransition.extend({
+    start: function() {
+      Promise
+        .all([this.newContainerLoading, this.fadeOut()])
+        .then(this.fadeIn.bind(this));
+    },
 
+    fadeOut: function() {
+      return $(this.oldContainer).animate({ opacity: 0 }).promise();
+    },
 
-$('.aside-open').on('click', function () {
-  $('#aside-wrap').toggleClass('active');
-});
+    fadeIn: function() {
+      var _this = this;
+      var $el = $(this.newContainer);
 
+      $(this.oldContainer).hide();
 
+      $el.css({
+        visibility : 'visible',
+        opacity : 0
+      });
 
+      $el.animate({ opacity: 1 }, 400, function() {
+        _this.done();
+      });
+    }
+  });
 
-
-
-// initMap() - функция инициализации карты
-function initMap() {
-  // Координаты центра на карте. Широта: 56.2928515, Долгота: 43.7866641
-  var centerLatLng = new google.maps.LatLng(59.949137, 30.278076);
-  // Обязательные опции с которыми будет проинициализированна карта
-  var mapOptions = {
-    center: centerLatLng, // Координаты центра мы берем из переменной centerLatLng
-    zoom: 16,               // Зум по умолчанию. Возможные значения от 0 до 21
-    styles: [{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#ff0000"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2f8c83"},{"visibility":"on"}]}]
+  Barba.Pjax.getTransition = function() {
+    return FadeTransition;
   };
-  // Создаем карту внутри элемента #map
-  var map = new google.maps.Map(document.getElementById("contacts-map"), mapOptions);
-}
-// запускаем initMap()
-initMap();
+  //=============
+  //end плавные переходы по страницам
+  //=============
+
+
+  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+    var currPage = container.id;
+
+    //============= begin about ==============
+    if (currPage === 'about') {
+      $('#about-sec__slider').slick({
+        autoplay: true,
+        dots: false,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: 801,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 501,
+            settings: {
+              arrows: false,
+              slidesToShow: 2
+            }
+          }
+        ]
+      });
+      // end Slick slider
+    }
+    //============= end about ==============
+
+    //============= begin projects ==============
+    else if (currPage === 'projects') {
+      var coords = [
+        //russia
+        [64.207355, 91.777372]
+      ];
+
+      var markers = [
+        //01
+        [55.81145, 37.62272, 'Месторождения золота МКАД'],
+        //02
+        [60.060030, 65.742541, 'Месторождения золота Забайкальского края'],
+        //03
+        [58.183126, 104.519520, 'Месторождения золота Забайкальского края'],
+        //04
+        [66.926374, 128.977237, 'Месторождения золота Забайкальского края']
+      ];
+
+      var map = {};
+
+      var isDraggable = $(document).width() > 700 ? true : false;
+
+      function initialize() {
+        var mapDiv = document.getElementById("projects-map");
+
+        map = new google.maps.Map(mapDiv, {
+          zoom: 3,
+          disableDefaultUI: false,
+          scrollwheel: false,
+          draggable: isDraggable,
+          center: new google.maps.LatLng(coords[0][0], coords[0][1]),
+          styles: [{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#ff0000"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2f8c83"},{"visibility":"on"}]}]
+        });
+
+        var image = "assets/img/marker.png";
+        var bubbleWrapStart = '<div class="map_bubble" style="display:block;max-width:180px;text-align:center;font-size:12px;color:#323232;">';
+        var bubbleWrapEnd = "</div>";
+
+        $.each(markers, function(index, val) {
+          var myLatLng = new google.maps.LatLng(val[0], val[1]);
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            icon: image,
+            title: val[2]
+          });
+
+          var infowindow = new google.maps.InfoWindow({
+            content: bubbleWrapStart + val[2] + bubbleWrapEnd
+          });
+
+          marker.addListener("mouseover", function() {
+            infowindow.open(map, marker);
+          });
+
+          marker.addListener("click", function() {
+            infowindow.open(map, marker);
+            map.panTo(this.getPosition());
+            map.setZoom(16);
+          });
+
+        });
+      }
+      // google.maps.event.addDomListener(window, "load", initialize);
+      initialize();
+
+    }
+    //============= end projects ==============
+
+    //============= begin contacts ==============
+    else if (currPage === 'contacts') {
+      function initMap() {
+        var centerLatLng = new google.maps.LatLng(59.949137, 30.278076);
+        var mapOptions = {
+          center: centerLatLng,
+          zoom: 16,               // Зум по умолчанию. Возможные значения от 0 до 21
+          styles: [{"featureType":"administrative","elementType":"all","stylers":[{"hue":"#ff0000"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2f8c83"},{"visibility":"on"}]}]
+        };
+        var map = new google.maps.Map(document.getElementById("contacts-map"), mapOptions);
+      }
+      initMap();
+    }
+    //============= end contacts ==============
+
+    //============= begin service ==============
+    else if (currPage === 'service') {
+      // begin scroll 2 ancore desktop menu
+      $(function() {
+        $('a.service-tab__item[href*=\\#]').on("click", function(e){
+          e.preventDefault();
+          var anchor = $(this);
+          $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 80 + 'px'
+          }, 1000);
+        });
+        return false;
+      });
+      // end scroll 2 ancore desktop menu
+
+      // ===== Scroll to Top ====
+      $(window).on('scroll', function() {
+        if ($(this).scrollTop() <= 50) {
+          $('#scroll2top').fadeOut();
+        } else {
+          $('#scroll2top').fadeIn();
+        }
+      });
+      $('#scroll2top').click(function() {
+        $('body,html').animate({
+          scrollTop : 0
+        }, 500);
+      });
+      // ===== End Scroll to Top ====
+    }
+    //============= end service ==============
+
+  });
+//====== End Barba ======
+
+
+
+//====== Begin Programmer code ======
+
+
+
+
+
+

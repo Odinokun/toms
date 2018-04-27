@@ -3,14 +3,17 @@ $(function() {
   // begin SVG for IE
   require('./modules/svg4everybody')();
 
-  // begin Scroll2Ancor
-  // require('./modules/scroll2ancor')();
+  // begin counter
+  require('./modules/counter')();
 
-  // begin Slick slider
-  // require('./modules/slick')();
+  // begin preloader
+  require('./modules/preloader')();
 
-  // begin Popup
-  // require('./modules/popup')();
+  // begin menu
+  require('./modules/menu')();
+
+  // begin ticker
+  require('./modules/ticker')();
 
   // begin Animate.css
   require('./modules/waypoints')();
@@ -18,8 +21,5 @@ $(function() {
 
   // begin Fancybox3
   require('./modules/fancybox')();
-
-  // begin Barba.js
-  require('./modules/barba')();
 
 });
