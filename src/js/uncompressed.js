@@ -31,6 +31,13 @@ function pageWidget(pages) {
 // END Меню для навигации при разработке
 
 
+$(window).on('load', function () {
+  var preloader = $('#preloader-overlay');
+  preloader.delay(1000).fadeOut('slow');
+});
+
+
+
 $('.burger input').on('click', function () {
   $('.aside-wrap').toggleClass('active');
 });
