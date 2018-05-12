@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Томс</title>
+    <meta name="description" content="odinokun`s start template">
+    <meta name="keywords" content="odinokun`s start template">
+    <meta name="author" content="odinokun">
+    <!-- begin responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- end responsive-->
+    <!-- begin social content&image-->
+    <meta property="og:title" content="odinokun`s start template">
+    <meta property="og:url" content="http://odinokun.com/">
+    <meta property="og:image" content="assets/img/social.jpg">
+    <!-- end social content&image-->
+    <!-- begin favicon block start-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+    <!-- end favicon block end-->
+    <style>
+      .preloader-overlay {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background-color: #03745a
+      }
+
+      .preloader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        text-align: center
+      }
+
+      .preloader svg {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 10px
+      }
+
+      .toms-logo-1 {
+        animation: dash 3s linear forwards
+      }
+
+      .toms-logo-2 {
+        animation: dash 6s linear forwards
+      }
+
+      .toms-logo-3 {
+        animation: dash 15s linear forwards
+      }
+
+      .toms-logo {
+        fill: transparent;
+        stroke-linecap: square;
+        stroke: #fff;
+        stroke-width: 2px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000
+      }
+
+      @keyframes dash {
+        from {
+          stroke-dashoffset: 1000
+        }
+        to {
+          stroke-dashoffset: 0
+        }
+      }
+
+      .preloader__name {
+        font-family: $font-os-b;
+        font-size: 70px;
+        letter-spacing: -3px;
+        text-transform: uppercase;
+        color: #fff
+      }
+    </style>
+    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/uncompressed.css">
+    <!-- begin custom browsers color-->
+    <meta name="theme-color" content="#007454">
+    <!-- end custom browsers color-->
+    <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!--begin preloader-->
+    <section class="preloader-overlay" id="preloader-overlay">
+      <div class="preloader">
+        <svg viewbox="0 0 140 140">
+          <path class="toms-logo toms-logo-1" d="M 1,1   L 139,1  L 139,139 L85,139  L85,55  L1,55z "></path>
+          <path class="toms-logo toms-logo-2" d="M 1,65  L 75,65  L 75,139  L40,139  L40,100  L1,100z "></path>
+          <path class="toms-logo toms-logo-3" d="M 1,110 L 30,110 L 30,139  L 1,139z"></path>
+        </svg>
+        <h2 class="preloader__name">томс</h2>
+      </div>
+    </section>
+    <!--end   preloader-->
+    <!-- begin header-->
+    <header class="header">
+      <!-- begin ticker-->
+      <div class="ticker">
+        <div class="ticker__viewport">
+          <div class="ticker__list" data-ticker="list">
+            <div class="ticker__item" data-ticker="item">Золото: BID 1327.04 ASK 1327.34</div>
+            <div class="ticker__item" data-ticker="item">Серебро: BID 16.59 ASK 16.62</div>
+            <div class="ticker__item" data-ticker="item">Платина: BID 970.0 ASK 980.0</div>
+            <div class="ticker__item" data-ticker="item">Палладий: BID 991.6 ASK 994.6</div>
+            <div class="ticker__item" data-ticker="item">16:04 мск</div>
+          </div>
+        </div>
+        <!-- end ticker-->
+      </div>
+    </header>
+    <!-- end header-->
+    <!--begin content-->
+    <section class="main index-page">
+      <!--begin parallax-->
+      <div id="parallax">
+        <div class="layer" data-depth="0.5">
+          <div class="layer-01"></div>
+        </div>
+        <div class="layer" data-depth="0.4">
+          <div class="layer-02"></div>
+        </div>
+        <div class="layer" data-depth="0.3">
+          <div class="layer-03"></div>
+        </div>
+      </div>
+      <!--end   parallax-->
+      <div class="container">
+        <div class="aside-wrap" id="aside-wrap">
+          <div class="aside-open">
+            <span>Меню</span>
+          </div>
+          <div class="aside fadeInDown animated" id="aside">
+            <a class="aside-logo" href="index.html">
+              <img src="assets/img/logo.jpg" alt="logo">
+            </a>
+            <!--begin burger-->
+            <div class="burger" id="burger">
+              <input id="burger__input" name="exit" type="checkbox">
+              <label for="burger__input">
+                <span class="burger__icon"></span>
+              </label>
+            </div>
+            <!--end burger-->
+            <nav class="aside-menu">
+              <ul class="aside-menu__list">
+                <li class="aside-menu__item">
+                  <a class="aside-menu__link" href="about.html">о компании</a>
+                </li>
+                <li class="aside-menu__item aside-menu__item--parent">
+                  <a class="aside-menu__link" href="service.html">услуги</a>
+                  <ul class="aside-menu__sublist">
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">epc</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">проектирование</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">поставки оборудования</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">Строительно-монтажные работы</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">управление проектами</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">Технический и финансовый аудит</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">Разработка тендерной документации</a>
+                    </li>
+                    <li class="aside-menu__subitem">
+                      <a class="aside-menu__sublink" href="#">строительство линий производства</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="aside-menu__item">
+                  <a class="aside-menu__link" href="inner.html">деятельность</a>
+                </li>
+                <li class="aside-menu__item">
+                  <a class="aside-menu__link" href="#">уникальные компетенции</a>
+                </li>
+                <li class="aside-menu__item active">
+                  <a class="aside-menu__link" href="projects.html">проекты</a>
+                </li>
+                <li class="aside-menu__item">
+                  <a class="aside-menu__link" href="contacts.html">контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="aside-lang">
+              <div class="aside-lang__item aside-lang__item--ru active" data-lang="rus"></div>
+              <div class="aside-lang__item--decor"></div>
+              <div class="aside-lang__text" id="aside-lang__text">rus</div>
+              <div class="aside-lang__item aside-lang__item--eng" data-lang="eng"></div>
+              <div class="aside-lang__item--decor"></div>
+            </div>
+          </div>
+        </div>
+        <section class="barba-wrapper" id="barba-wrapper">
+          <div class="barba-container index" id="index">
+            <div class="hero fadeInUp animated">
+              <div class="hero-text">
+                <h2 class="hero__title">комплексное ОСВОЕНИЕ НЕДР С 1993 ГОДА</h2>
+                <h3 class="hero__subtitle">мы знаем, как ископаемые становятся полезными</h3>
+                <p>Компании группы ТОМС оказывают полный
+                  <a href="#">комплекс услуг</a> по освоению месторождения от инвестиционного замысла до выхода предприятия на проектную мощность.
+                </p>
+                <a class="btn button--pipaluk index-btn" href="#">узнать больше</a>
+                <!--button.hero__btn узнать больше-->
+              </div>
+              <div class="hero-footer">
+                <div class="hero-footer__item">
+                  <span class="hero-footer__top">более</span>
+                  <span class="hero-footer__middle spincrement">20</span>
+                  <span class="hero-footer__bottom">лет на рынке</span>
+                </div>
+                <div class="hero-footer__item">
+                  <span class="hero-footer__top">реализовано</span>
+                  <span class="hero-footer__middle spincrement">28</span>
+                  <span class="hero-footer__bottom">ерсм проектов</span>
+                </div>
+                <div class="hero-footer__item">
+                  <span class="hero-footer__top">ежегодно</span>
+                  <span class="hero-footer__middle spincrement">120</span>
+                  <span class="hero-footer__bottom">НИР и тех. регламентов</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!--end content-->
+    <!--begin popup-->
+    <div class="popup__layer">
+      <div class="popup">
+        <div class="popup__close">
+          <svg>
+            <use xlink:href="assets/img/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="popup__left">
+          <h3 class="popup__title">релизован очередной крупный проект</h3>
+          <p>Группа ТОМС обладает необходимыми компетенциями для планирования и выполнения всего спектра услуг и работ, необходимых недропользователю и инвестору как для привлечения финансирования, так и для развития проекта на любом этапе его освоения.</p>
+          <a
+            class="btn button--pipaluk" href="#">узнать больше</a>
+        </div>
+        <div class="popup__right"></div>
+      </div>
+    </div>
+    <!--end popup-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOCsBWLmb8s4eo6cltyZG2HRu99sG3RnE"></script>
+    <script src="assets/js/foundation.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/uncompressed.js"></script>
+  </body>
+</html>

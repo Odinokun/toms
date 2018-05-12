@@ -8,6 +8,16 @@ $('.aside-lang__item').on('click', function () {
 //====== End language switcher ======
 
 
+//====== Begin popup ======
+$(window).on('load', function () {
+  $('.popup__layer').delay(10000).fadeIn();
+});
+$('.popup__close').on('click',function () {
+  $('.popup__layer').fadeOut();
+});
+//====== End popup ======
+
+
 
 //====== Begin Barba ======
   Barba.Pjax.start();
