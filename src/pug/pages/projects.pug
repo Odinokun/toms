@@ -33,21 +33,21 @@ block content
 
               h2.projects__title Проекты, реализованные группой Томс
               .projects__row
-                a(href="#").projects__item
+                .projects__item(data-project="01")
                   .projects__img
                     .projects__img--inn
                       img(src="assets/img/project-01.jpg" alt="project")
                   .projects__text
                     span Забайкальский край
 
-                a(href="#").projects__item
+                .projects__item(data-project="02")
                   .projects__img
                     .projects__img--inn
                       img(src="assets/img/project-02.jpg" alt="project")
                   .projects__text
                     span Иркутская область
 
-                a(href="#").projects__item
+                .projects__item(data-project="03")
                   .projects__img
                     .projects__img--inn
                       img(src="assets/img/project-03.jpg" alt="project")
@@ -55,6 +55,43 @@ block content
                     span Камчатский край
           //end   page
   //end content
+
+  //begin projects-popups
+  .projects-popup__layer
+  .projects-popup.projects-popup--01
+    .popup__close
+      svg
+        use(xlink:href="assets/img/sprite.svg#close")
+    .projects-popup__inn
+      .projects-popup__top(style="background-image:url('assets/img/projects-popup.jpg');")
+        h3.projects-popup__title Забайкальский край
+      .projects-popup__bottom
+        p Товарищи! консультация с широким активом требуют от нас анализа соответствующий условий активизации. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+        p Равным образом укрепление и развитие структуры способствует подготовки и реализации систем массового участия.
+  .projects-popup.projects-popup--02
+    .popup__close
+      svg
+        use(xlink:href="assets/img/sprite.svg#close")
+    .projects-popup__inn
+      .projects-popup__top(style="background-image:url('assets/img/projects-popup.jpg');")
+        h3.projects-popup__title Иркутская область
+      .projects-popup__bottom
+        p Товарищи! консультация с широким активом требуют от нас анализа соответствующий условий активизации. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+        p Равным образом укрепление и развитие структуры способствует подготовки и реализации систем массового участия.
+  .projects-popup.projects-popup--03
+    .popup__close
+      svg
+        use(xlink:href="assets/img/sprite.svg#close")
+    .projects-popup__inn
+      .projects-popup__top(style="background-image:url('assets/img/projects-popup.jpg');")
+        h3.projects-popup__title Камчатский край
+      .projects-popup__bottom
+        p Товарищи! консультация с широким активом требуют от нас анализа соответствующий условий активизации. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+        p Равным образом укрепление и развитие структуры способствует подготовки и реализации систем массового участия.
+
+  //end projects-popups
+
+
 
   include ../elements/popup
   include ../sections/scripts

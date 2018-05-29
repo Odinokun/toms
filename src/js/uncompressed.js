@@ -18,6 +18,18 @@ $('.popup__close').on('click',function () {
 //====== End popup ======
 
 
+//====== Begin projects popup ======
+$('.projects__item').on('click', function () {
+  var popupNum = $(this).data('project');
+  $('.projects-popup__layer').fadeIn();
+  $('.projects-popup--' + popupNum).fadeIn();
+});
+$('.popup__close').on('click',function () {
+  $('.projects-popup__layer, .projects-popup').fadeOut();
+});
+//====== End projects popup ======
+
+
 //====== Begin Barba ======
   Barba.Pjax.start();
   //=============

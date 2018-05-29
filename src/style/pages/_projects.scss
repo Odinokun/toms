@@ -15,6 +15,7 @@
   text-align: center;
   text-transform: uppercase;
   color: #00755a;
+
   @include max(1000) {
     font-size: 20px;
   }
@@ -30,6 +31,7 @@
   flex-direction: column;
   width: 33.33%;
   margin-bottom: 20px;
+  cursor: pointer;
   text-align: center;
 
   @include max(1000) {
@@ -38,6 +40,7 @@
   @include max(500) {
     width: 100%;
   }
+
   &:hover {
     text-decoration: none;
     .projects__img {
@@ -85,5 +88,77 @@
     font-size: 14px;
     text-transform: uppercase;
     color: #00755a;
+  }
+}
+
+.projects-popup__layer {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 21, 15, .6);
+}
+.projects-popup {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 90%;
+  max-width: 870px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    right: -15px;
+    bottom: -15px;
+    left: 15px;
+    margin: auto;
+    content: '';
+    border: 2px solid #ffd400;
+  }
+}
+.projects-popup__inn {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.projects-popup__top {
+  position: relative;
+  padding: 30px 25px 45px 25px;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: cover;
+  &::before {
+    position: absolute;
+    bottom: 17px;
+    left: -8px;
+    width: 119px;
+    height: 6px;
+    content: '';
+    background-color: #ffd400;
+  }
+}
+.projects-popup__title {
+  font-family: $font-os-b;
+  font-size: 30px;
+  margin: 0;
+  color: #007659;
+
+  @include max(550) {
+    font-size: 24px;
+  }
+}
+.projects-popup__bottom {
+  padding: 35px 25px;
+  background-color: #fff;
+  p {
+    font-size: 14px;
   }
 }
