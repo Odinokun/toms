@@ -128,15 +128,15 @@
     <!--begin content-->
     <section class="main projects-page">
       <!--begin parallax-->
-      <div id="parallax">
-        <div class="layer" data-depth="0.5">
-          <div class="layer-01"></div>
+      <div class="parallax" id="parallax">
+        <div class="parallax__layer parallax__layer--top" data-depth="0.1">
+          <div class="parallax__layer-inn"></div>
         </div>
-        <div class="layer" data-depth="0.4">
-          <div class="layer-02"></div>
+        <div class="parallax__layer parallax__layer--middle" data-depth="0.05">
+          <div class="parallax__layer-inn"></div>
         </div>
-        <div class="layer" data-depth="0.3">
-          <div class="layer-03"></div>
+        <div class="parallax__layer parallax__layer--bottom" data-depth="-0.02">
+          <div class="parallax__layer-inn"></div>
         </div>
       </div>
       <!--end   parallax-->
@@ -282,6 +282,24 @@
       </div>
     </section>
     <!--end content-->
+    <!--begin popup-->
+    <div class="popup__layer">
+      <div class="popup">
+        <div class="popup__close">
+          <svg>
+            <use xlink:href="assets/img/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="popup__left">
+          <h3 class="popup__title">релизован очередной крупный проект</h3>
+          <p>Группа ТОМС обладает необходимыми компетенциями для планирования и выполнения всего спектра услуг и работ, необходимых недропользователю и инвестору как для привлечения финансирования, так и для развития проекта на любом этапе его освоения.</p>
+          <a
+            class="btn button--pipaluk" href="#">узнать больше</a>
+        </div>
+        <div class="popup__right"></div>
+      </div>
+    </div>
+    <!--end popup-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOCsBWLmb8s4eo6cltyZG2HRu99sG3RnE"></script>
     <script src="assets/js/foundation.js"></script>
     <script src="assets/js/app.js"></script>

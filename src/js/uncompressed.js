@@ -18,7 +18,6 @@ $('.popup__close').on('click',function () {
 //====== End popup ======
 
 
-
 //====== Begin Barba ======
   Barba.Pjax.start();
   //=============
