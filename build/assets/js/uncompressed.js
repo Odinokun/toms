@@ -110,6 +110,18 @@ $('.popup__close').on('click',function () {
 
     //============= begin projects ==============
     else if (currPage === 'projects') {
+      //====== Begin projects popup ======
+      $('.projects__item').on('click', function () {
+        var popupNum = $(this).data('project');
+        $('.projects-popup__layer').fadeIn();
+        $('.projects-popup--' + popupNum).fadeIn();
+      });
+      $('.popup__close').on('click',function () {
+        $('.projects-popup__layer, .projects-popup').fadeOut();
+      });
+      //====== End projects popup ======
+
+
       var coords = [
         //russia
         [64.207355, 91.777372]
