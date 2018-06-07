@@ -22,4 +22,7 @@ $(function() {
   // begin Fancybox3
   require('./modules/fancybox')();
 
+  // begin Slick slider
+  require('./modules/slick')();
+
 });
